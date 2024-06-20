@@ -8,4 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     echo "Entered Username:". " ".  $username. "<br>";
     echo "Entered Email Address:"." ". $email. "br";
+    header("Location: successpage.php");
+    exit();
 }
