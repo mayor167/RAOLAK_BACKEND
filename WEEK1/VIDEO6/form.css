@@ -4,3 +4,6 @@ body{
 main{
     margin: 200px 0;
 }
+label{
+    color: #ffff;
+}

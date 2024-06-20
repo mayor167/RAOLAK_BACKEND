@@ -18,6 +18,13 @@
         <br>
         <input type="email" name="email" placeholder="Enter your email address">
         <br><br>
+        <select name="favouritepet" id="favouritepet">
+            <option value="none">None....</option>
+            <option value="Dog">Dog</option>
+            <option value="Duck">Duck</option>
+            <option value="Cat">Cat</option>
+        </select>
+        <br><br>
       <button type="submit">Submit</button>
         </form>
     </main>
