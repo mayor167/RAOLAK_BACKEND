@@ -8,11 +8,11 @@
 <body>
     <?php
         //string operator e.g contenation(note we join or contenate strings together using .)
-        $surname = "ADENIJI";
-        $firstname = "Oyeyemi";
-        $profession = "Full Stack Engineer";
-        $companyName = "Techsol";
-        echo "I'm". " ". $surname." ".$firstname. " ,". "a"." ". $profession. " ". "at"." ". $companyName;
+        $surname = 'ADENIJI';
+        $firstname = 'Oyeyemi';
+        $profession = 'Full Stack Engineer';
+        $companyName = 'Techsol';
+        echo "I'm $surname $firstname , a $profession at $companyName";
     ?>
     <br>
     <?php
@@ -77,7 +77,7 @@
         <?php
         //Logical Operator
         $num4 = 50;
-        if ($num4 === $num3 || $num1 === $num2){
+        if ($num4 === $num3 or $num1 === $num2){
             echo "This is true"; // || is the same as OR and it returns true if one of the conditions is true, also returns false if both conditions are false and verse-versa
             // && is the same as "AND" and it returns true if both conditions are true and verse-versa, also returns false if one of the conditions is false
             /* 

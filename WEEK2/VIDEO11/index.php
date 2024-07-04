@@ -29,7 +29,7 @@
          echo pow($number2, 5.5)."<br>";
          echo sqrt($number1)."<br>";
          echo sqrt($number2)."<br>";
-         echo round(sqrt($number2))."<br>";
+         echo round(sqrt($number2), 2)."<br>";
          echo rand(1,100)."<br>";
 
          //Array Built-in Function in PHP
@@ -43,10 +43,10 @@
             echo "<br>";
             echo is_array($mergeArray);
              //date built-in functions in PHP
-             echo date("Y-m-d H:i:s")."<br>";
+             echo date("y-M-d H:i:s")."<br>";
              echo time()."<br>";
              $date = "2024-6-25 12:00:00";
-             echo strtotime($date)."<br>";
+             echo strtotime("today")."<br>";
     ?>
  </body>
  </html> 
