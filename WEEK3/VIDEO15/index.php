@@ -70,6 +70,19 @@ echo $sum. "<br>";
         echo "The sum of the numbers is $sum <br>";
         echo "The mean if the numbers is $mean <br>";
 
+        $users = [
+            ["username"=> "user1", "fullname" => "fullname1", "phonenumber" => "07012345678"],
+            ["username"=> "user2", "fullname" => "fullname2", "phonenumber" => "07012345671"],
+            ["username"=> "user3", "fullname" => "fullname3", "phonenumber" => "07012345679"],
+            ["username"=> "user4", "fullname" => "fullname4", "phonenumber" => "07012345670"]
+        ];
+echo "<br>";
+        foreach ($users as $user) {
+            echo "Username => {$user['username']} <br/>
+            Fullname => {$user['fullname']} <hr/> ";
+
+
+        }
     ?>
 </body>
 </html>

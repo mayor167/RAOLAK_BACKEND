@@ -1,0 +1,1 @@
+//Learnt how to database set password, login information and how to handle error code 1034 on the p

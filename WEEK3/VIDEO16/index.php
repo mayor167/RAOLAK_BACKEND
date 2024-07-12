@@ -18,6 +18,21 @@
     Note that, MySQL is a relational database management system(RDBMS)
     */
 
+    function connect_to_database () {
+        $con = mysqli_connect('localhost', 'root', '', 'raolak_school');
+        if ($con) {
+            echo 'connected to DB'; return $con;
+        }
+        return false;
+    }
+
+    $con = connect_to_database();
+    
+    $sql= "CREATE TABLE users_two (id INT NOT NULL PRIMARY KEY,
+    username varchar(100), password varchar(200), created_at datetime NOT NULL default now())";
+
+   $query =  $con != false ? mysqli_query($con, $sql) : 'cannot carry out operation';
+    
     ?>
 </body>
 </html>
