@@ -27,7 +27,7 @@ function signup_inputs(){
                 echo '<input type="text" name="username" placeholder="Enter Your Username">';
                 echo "<br><br>";
             }
-            echo ' <input type="text" name="pwd" placeholder="Enter Your Password">';
+            echo ' <input type="password" name="pwd" placeholder="Enter Your Password">';
             echo "<br><br>";
             if (isset($_SESSION["signup_data"]["email"]) && !isset($_SESSION["errors_signup"]["email_used"]) && !isset($_SESSION["errors_signup"]["invalid_email"])){
                 echo ' <input type="text" name="email" placeholder="Enter Your E-mail" value ="'.$_SESSION["signup_data"]["email"].'">';

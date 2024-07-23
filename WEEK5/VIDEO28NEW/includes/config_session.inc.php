@@ -15,16 +15,40 @@ session_set_cookie_params(
 );
 session_start();
 //setting session id intervally
-if (!isset($_SESSION["last_regeneration"])){
-            session_regenerate_id();
-           // echo (session_regenerate_id());
-            $_SESSION["last_regeneration"] = time();
+
+if(isset($_SESSION["user_id"])){
+    if (!isset($_SESSION["last_regeneration"])){
+        regenerate_session_id_loggedin();
 }
 else{
-    $interval = 60 * 30;
-    if (time() - $_SESSION['last_regeneration'] >= $interval){
-                    session_regenerate_id();
-                    $_SESSION['last_regeneration'] = time();
-    }
+$interval = 60 * 30;
+if (time() - $_SESSION['last_regeneration'] >= $interval){
+    regenerate_session_id_loggedin();
+}
+}
+
+}
+else{
+    if (!isset($_SESSION["last_regeneration"])){
+        regenerate_session_id();
+}
+else{
+$interval = 60 * 30;
+if (time() - $_SESSION['last_regeneration'] >= $interval){
+    regenerate_session_id();
+}
+}
+}
+function regenerate_session_id_loggedin(){
+                session_regenerate_id(true);
+                $userId = $_SESSION["user_id"];
+                $_SESSION['last_regeneration'] = time();
+                $newSessionId = session_create_id();
+                $sessionId = $newSessionId."_". $userId;
+                session_id($sessionId);
+}
+function regenerate_session_id(){
+                session_regenerate_id(true);
+                $_SESSION['last_regeneration'] = time();
 }
     
