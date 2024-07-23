@@ -35,7 +35,11 @@
             Don't have an account?</a></p></center>
             <!-- <center><button type="submit" class="signup">Sign up</button></center>  -->
         </form>
-        
+        <center>
+           <div class="sign_up">
+                    <a href="login.php">Sign up</a>
+             </div>
+           </center>
     </div>
     <div class="div-footer">
         <center><p>TECHSOL | Designed by TECHSOL Team</p></center>
