@@ -10,8 +10,8 @@ body{
     /* align-items: center; */
 }
 img{
-    width: 80x;
-    height: 80px;
+    width: 100x;
+    height: 100px;
     margin-top: 30px;
     margin-bottom: 10px;
 }
@@ -114,8 +114,8 @@ a{
     border-bottom: 1px solid #d55d02;
 }
 .signin{
-    background-color: #d55d02;
-    border: 1px solid #d55d02;
+    background-color: #e04f9e;
+    border: 1px solid #e04f9e;
     color: #fbf8fa;
     font-family: 'Segoe UI';
     font-weight: 400;
