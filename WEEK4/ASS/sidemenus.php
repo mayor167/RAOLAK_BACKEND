@@ -21,7 +21,7 @@ function displayErrors() {
 function displaySuccess(){
     $output = '';
     if (isset($_SESSION['success']) && !empty($_SESSION['success'])) {
-        $output .= '<div style="color:green;padding-left:20px">';
+        $output .= '<div style="color:#06D001;padding-left:20px">';
         foreach ($_SESSION['success'] as $success) {
             $output .= '<li>' . htmlspecialchars($success) . '</li>';
         }
@@ -32,8 +32,9 @@ function displaySuccess(){
 }
 ?>
 <main>
+<link rel="stylesheet" href="editprofileform.css?v=7.0">
     <div class="side_menu_container">
-        <div class="side_menu">           
+        <div class="side_menu_profile">           
                 <nav>
                     <ul>
                         <li><a href="dashboard.php"><span class="fas fa-home"></span>Dashboard</a></li>
@@ -64,7 +65,6 @@ function displaySuccess(){
                         <p><b>phone Number : </b><?php echo htmlspecialchars (($phoneNo))?></p><hr>
                        </div> 
                    <div class="Add_to_cart_gallery"><br>
-                   <link rel="stylesheet" href="editprofileform.css?v=5.0">
                             <div id="editprofileform">
                             <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit and Update your details here</h1><br>
                             <?php echo displayErrors()?>

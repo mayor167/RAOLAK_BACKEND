@@ -11,8 +11,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
     require_once '../classes/Dbh.php';
     require_once '../classes/EditProfile.php';
     $editProfile = new EditProfile($fullname,$username, $email, $phoneNo,  $address,  $currentpwd, $newpwd, $confirmpwd);
-   // $editProfile->comparePassword();
-    //$editProfile->updateUserForm();
     $editProfile->submitEditedForm();
 
 }

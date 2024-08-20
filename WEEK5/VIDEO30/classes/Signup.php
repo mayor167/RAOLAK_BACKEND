@@ -66,6 +66,7 @@ public function signupUser(){
         die();
     }
         $this-> insertUser();
+        
     
 }
 

@@ -152,9 +152,9 @@ main{
     position: relative;
    
 }
-.side_menu{
+.side_menu_dash{
     width: 100%;
-    height: 468px;
+    height: 710px;
     background-color: #fff;
     position: absolute;
     top: -100px;

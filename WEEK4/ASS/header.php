@@ -1,3 +1,7 @@
+<?php 
+$userDetails = $_SESSION['userDetails'];
+$username = $userDetails['username'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naira4Goods | Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css?v=5.0">
+    <link rel="stylesheet" href="dashboard.css?v=1.0">
 </head>
 <body>
     <header class="brand_logo_welcome_header">
@@ -19,12 +23,12 @@
             <div class="logo">
                 <center> <img src="brand_logo.png" alt=""></center>
                 <center>
-                    <p>Wallet: <span id="wallet_balance">₦1,000,000</span> </p>
+                    <p>Wallet: <span id="wallet_balance"><b>₦1,000,000</b></span> </p>
                 </center>
             </div>
         </div>
         <div class="welcome_back_msg">
-           <h2>Welcome Back, &nbsp;<span>Mayorsky</span></h2>
+           <h2>Welcome Back, &nbsp;<span><?php echo htmlspecialchars (strtoupper($username))?></span></h2>
            <p>At Naira4Goods, Elevate your wardrobe without breaking the bank</p>
         </div>
     </header>

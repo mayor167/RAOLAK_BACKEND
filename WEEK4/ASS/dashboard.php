@@ -28,8 +28,8 @@ else{
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naira4Goods | Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css?v=5.0">
-    <!-- <link rel="stylesheet" href="style.css?v=1.0"> -->
+    <link rel="stylesheet" href="dashboard.css?v=6.0">
+    <!-- <link rel="stylesheet" href="style.css?v=2.0"> -->
 </head>
 <body>
     <header class="brand_logo_welcome_header">
@@ -38,7 +38,7 @@ else{
                 <center> <img src="brand_logo.png" alt=""></center>
                 <center>
 
-                    <p>Wallet: <span id="wallet_balance">₦1,000,000</span> </p>
+                    <p>Wallet: <span id="wallet_balance"><b>₦1,000,000</b></span> </p>
                 </center>
             </div>
         </div>
@@ -49,7 +49,7 @@ else{
     </header>
    <main>
     <div class="side_menu_container">
-        <div class="side_menu">
+        <div class="side_menu_dash">
            
                 <nav>
                     <ul>

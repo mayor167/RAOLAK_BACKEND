@@ -21,7 +21,7 @@ function displayErrors() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login.css?v=2.0">
+    <link rel="stylesheet" href="login.css?v=3.0">
 </head>
 <body>
     <div class="div-form">

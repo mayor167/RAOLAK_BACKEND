@@ -12,7 +12,6 @@ class EditProfile extends Dbh{
     private $confirmpwd;
     private $errors = [];
     private $success=[];
-    //private $pwd;
     public function __construct($fullname, $username, $email, $phoneNo, $address,$currentpwd,$newpwd,$confirmpwd)
     {
         $this->fullname = $fullname;
@@ -98,14 +97,7 @@ class EditProfile extends Dbh{
         $result =$this->getPwd();
         if (!password_verify($this->currentpwd, $result['pwd'])){
             $this->errors[]= "Invalid password";
-           // header("Location: ../login.php");
-           //echo(!password_verify($this->currentpwd, $_SESSION['pwd']));
-           //print_r( $result['pwd']);
-           // return true;
         }
-        // else{
-        //     return false;
-        // }
     }
     public function submitEditedForm(){
         $this->comparePassword();
