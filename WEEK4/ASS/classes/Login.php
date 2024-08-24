@@ -17,7 +17,7 @@ class Login extends Dbh{
         $stmt->bindParam(":pwd", $this->pwd);
         $stmt->execute();
         $result= $stmt->fetch(PDO::FETCH_ASSOC);
-       return $result;
+        return $result;
     }
     private function invalidPwd(){
             $results = $this->getLoginDetails();

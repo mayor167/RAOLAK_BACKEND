@@ -1,11 +1,13 @@
 <?php
 $userDetails = $_SESSION['userDetails'];
+
 $username = $userDetails['username'];
 $fullname = $userDetails['fullname'];
 $email = $userDetails['email'];
 $gender = $userDetails['gender'];
 $state = $userDetails['state'];
 $phoneNo = $userDetails['phoneNo'];
+$address = $userDetails['address'];
 function displayErrors() {
     $output = '';
     if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
@@ -32,7 +34,7 @@ function displaySuccess(){
 }
 ?>
 <main>
-<link rel="stylesheet" href="editprofileform.css?v=7.0">
+<link rel="stylesheet" href="editprofileform.css?v=5.0">
     <div class="side_menu_container">
         <div class="side_menu_profile">           
                 <nav>
@@ -60,9 +62,12 @@ function displaySuccess(){
                         <p><b>Bank Name:</b> Wema bank</p><hr>
                         <p><b>Full Name: </b><?php echo htmlspecialchars (strtoupper($fullname))?></p><hr>
                         <p><b>Email Address : </b><?php echo htmlspecialchars (($email))?></p><hr>
-                        <p><b>Gender : </b><?php echo htmlspecialchars (($gender))?></p><hr>
+                        <p><b>Gender : </b><?php echo htmlspecialchars (($gender));
+                        //print_r($userDetails);
+                        ?></p><hr>
                         <p><b>State : </b><?php echo htmlspecialchars (strtoupper($state))?></p><hr>
                         <p><b>phone Number : </b><?php echo htmlspecialchars (($phoneNo))?></p><hr>
+                        <p><b>Residential Address : </b><?php echo htmlspecialchars (($address))?></p><hr>
                        </div> 
                    <div class="Add_to_cart_gallery"><br>
                             <div id="editprofileform">
@@ -103,24 +108,24 @@ function displaySuccess(){
                     <input type="text" name="address" placeholder="2,akinwumi street ashi Ibadan ">
                 </div>
                 <br>
-                <label for="pwd">Current Password</label>
+                <label for="pwd">Your Password</label>
                 <br>
                 <div class="div-input">
                     <span class="icon material-symbols-outlined">lock</span>
-                    <input type="password" name="currentpwd" placeholder="Input Current Password">
+                    <input type="password" name="currentpwd" placeholder="Input Your Password">
                 </div><br>
-                <label for="pwd">New Password</label>
+                <!-- <label for="pwd">New Password</label>
                 <br>
                 <div class="div-input">
                     <span class="icon material-symbols-outlined">lock</span>
                     <input type="password" name="newpwd" placeholder="Enter New Password">
-                </div><br>
-                <label for="pwd">Verify New Password</label>
+                </div><br> -->
+                <!-- <label for="pwd">Verify New Password</label>
                 <br>
                 <div class="div-input">
                     <span class="icon material-symbols-outlined">lock</span>
                     <input type="password" name="confirmpwd" placeholder="Confirm New Password">
-                </div><br><br>
+                </div><br><br> -->
                 <center><button type="submit" class="signup">Update & Save</button></center>
     </form>
                 </div>

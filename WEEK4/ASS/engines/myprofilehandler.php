@@ -6,11 +6,11 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
     $phoneNo = htmlspecialchars($_POST['phoneNo']);
     $address = htmlspecialchars($_POST['address']);
     $currentpwd = htmlspecialchars($_POST['currentpwd']);
-    $newpwd = htmlspecialchars($_POST['newpwd']);
-    $confirmpwd = htmlspecialchars($_POST['confirmpwd']);
+    // $newpwd = htmlspecialchars($_POST['newpwd']);
+    // $confirmpwd = htmlspecialchars($_POST['confirmpwd']);
     require_once '../classes/Dbh.php';
     require_once '../classes/EditProfile.php';
-    $editProfile = new EditProfile($fullname,$username, $email, $phoneNo,  $address,  $currentpwd, $newpwd, $confirmpwd);
+    $editProfile = new EditProfile($fullname,$username, $email, $phoneNo,  $address,  $currentpwd);
     $editProfile->submitEditedForm();
 
 }

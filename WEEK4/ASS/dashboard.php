@@ -13,6 +13,7 @@ else{
             $gender = $userDetails['gender'];
             $phoneNo = $userDetails['phoneNo'];
             $state = $userDetails['state'];
+            $address = $userDetails['address'];
     }
 }
 ?>
@@ -28,7 +29,7 @@ else{
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naira4Goods | Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css?v=6.0">
+    <link rel="stylesheet" href="dashboard.css?v=3.0">
     <!-- <link rel="stylesheet" href="style.css?v=2.0"> -->
 </head>
 <body>
@@ -113,6 +114,7 @@ else{
                         <p><b>Gender : </b><?php echo htmlspecialchars(($gender));?></p><hr>
                         <p><b>State : </b><?php echo htmlspecialchars(strtoupper($state));?></p><hr>
                         <p><b>phone Number : </b><?php echo htmlspecialchars(($phoneNo));?></p><hr>
+                        <p><b>Residential Address : </b><?php echo htmlspecialchars (($address))?></p><hr>
                        </div> 
                    <div class="Add_to_cart_gallery">
 
