@@ -166,3 +166,60 @@ border: 1px solid #010020;
 .sign_up{
     
 }
+.sign_in{
+    color: #f8f8f8;
+    background-color: #010020;
+    border: 1px solid #010020;
+    padding: 10px;
+    width: 125px;
+    height: 50px;
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.sign_in a{
+    color: #fbf8fa;
+    font-family: 'Roboto';
+    font-weight: 400;
+    line-height: 30px;
+    font-size: 16px;
+    font-style: normal;
+}
+.sign_in:hover{
+    background-color: #e04f9e;
+    border: 1px solid #e04f9e;
+    }
+
+    .changepassword{
+        background-color: #e04f9e;
+    border: 1px solid #e04f9e;
+    color: #fbf8fa;
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    line-height: 30px;
+    font-size: 16px;
+    font-style: normal;
+    padding: 10px;
+    width: 150px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    float: right;
+    }
+    .sign_in{
+
+    }
+    form button {
+        /* color: #06D001;  */
+        /* background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-family: 'Segoe UI';
+        font-weight: 400;
+        font-size: 16px; */
+    }
+    
+    form button:hover {
+        /* text-decoration: underline; */
+    }

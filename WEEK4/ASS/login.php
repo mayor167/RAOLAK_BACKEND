@@ -13,6 +13,8 @@ function displayErrors() {
     }
     return $output;
 }
+// $username = isset($_COOKIE['username']);
+// $password = isset($_COOKIE['password']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,20 +37,23 @@ function displayErrors() {
             <br>
             <div class="div-input">
                 <span class="icon material-symbols-outlined">person</span>
-                <input type="text" name="username" placeholder="Enter Email/Phone Number/Username"></div>
+                <input type="text" name="username" placeholder="Enter Email/Phone Number/Username" value="<?php if(isset($_COOKIE['username'])){echo $_COOKIE['username'] ;}
+                ?>">
+            </div>
             <br>
             <label for="pwd">Password</label>
             <br>
             <div class="div-input">
                 <span class="icon material-symbols-outlined">lock</span>
-                <input type="password" name="pwd" placeholder="Input your Password">
+                <input type="password" name="pwd" placeholder="Input your Password" value="<?php if(isset($_COOKIE['password'])){echo $_COOKIE['password'];}
+                ?>">
             </div>
             <br><br>
                 <div class="div-sign-remember">
-                <input class="ui check checkbox" type="checkbox"name="remember-me"><label for="remember-me" class="label-rem">Remember me</label>
+                <input class="ui check checkbox" type="checkbox" name="remember-me"<?php if(isset($_COOKIE['username'])){echo 'checked';}?>><label for="remember-me" class="label-rem">Remember me</label>
                 <button type="submit" class="signin">Sign in</button>
                     </div>
-                    <a href="#" class="forgot-pwd">Forgot password</a>
+                    <a href="forgotPassword.php" class="forgot-pwd">Forgot password</a>
            <p class="hr"></p>
            <center><p><a href="register.php">
             Don't have an account?</a></p></center>

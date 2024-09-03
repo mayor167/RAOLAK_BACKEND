@@ -105,7 +105,7 @@ function displaySuccess(){
                 <br>
                 <div class="div-input">
                     <span class="icon material-symbols-outlined">email</span>
-                    <input type="text" name="address" placeholder="2,akinwumi street ashi Ibadan ">
+                    <input type="text" name="address" placeholder="2,akinwumi street ashi Ibadan" value="<?php echo htmlspecialchars (($address))?>">
                 </div>
                 <br>
                 <label for="pwd">Your Password</label>

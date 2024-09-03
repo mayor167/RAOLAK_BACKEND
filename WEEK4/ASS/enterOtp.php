@@ -1,21 +1,38 @@
 <?php
 session_start();
-// if (!isset($_SESSION['email'])) {
-//         header("Location: register.php");
-//         die();
-//     }
+if(!isset($_SESSION['userEmail'])){
+header("Location: register.php");
+die();
+}
 function displayErrors() {
     $output = '';
     if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
-        $output .= '<div style="color:red">';
+        $output .= ' <center><div style="color:red;padding-left:20px">';
         foreach ($_SESSION['errors'] as $error) {
-            $output .= '<li>' . htmlspecialchars($error) . '</li>';
-          
+            $error = trim($error);           
+            if ($error === "OTP has expired!") {
+                $formButton2RegenerateOtp = '
+                <form action="engines/regenerateOtpHandler.php" method="POST">
+                    <center><button type="submit" class="sign_in">Regenerate OTP</button></center>
+                </form>';
+                $output .= '<li>' . htmlspecialchars($error) . '<br/>' .'</br>'. $formButton2RegenerateOtp . '</li>';
+            } else {
+                $output .= '<li>' . htmlspecialchars($error) . '</li>';
+            }
         }
-        $output .= '</div>';
+        $output .= '</div></center>';
         unset($_SESSION['errors']);
     }
     return $output;
+}
+function displaySuccess(){
+    $output ='';
+    if (isset($_SESSION['success']) && !empty($_SESSION['success'])){
+            $output.='<div style="color:#06D001">';
+            $output.='<li>'.htmlspecialchars($_SESSION['success']).'</li>'.'</div>';
+    }
+        unset($_SESSION['success']);
+        return $output;
 }
 ?>
 <!DOCTYPE html>
@@ -24,24 +41,25 @@ function displayErrors() {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recover Password | Naira4goods</title>
-    <link rel="stylesheet" href="login.css?v=6.0">
+    <title>OTP Confirmation | Naira4goods</title>
+    <link rel="stylesheet" href="login.css?v=1.0">
 </head>
 <body>
     <div class="div-form">
         <center><img src="brand_logo.png" alt="Naira4coin"></center>
         <?php
         echo (displayErrors());
+        echo (displaySuccess());
         ?>
-        <form action="engines/forgotPasswordHandler.php" method="post">
-            <h2>Recover Password</h2>
-            <p>Enter your email address below and we'll send six digits OTP to email with instructions. kindly check your spam if mail is not found in your inbox.</p>
+        <form action="engines/enterOtpHandler.php" method="POST">
+            <h2>OTP Confirmation</h2>
+            <p>Kindly enter the OTP sent to your Email Address to change your password</p>
             
             <div class="div-input">
                 <span class="icon material-symbols-outlined">person</span>
-                <input type="email" name="email" placeholder="Input Your Registered Email"></div>
+                <input type="number" name="otp" placeholder="Enter your OTP"></div>
             <br>
-                <button type="submit" class="signin" name="submit">Submit</button>
+            <button type="submit" class="signin" name="submit">Submit</button>
                 <br><br><br><br>
                 <p class="hr"></p>
                 <br> <br>
@@ -49,7 +67,7 @@ function displayErrors() {
                 Login to your account?</a></p></center>
                 <!-- <center><button class="signup"><a href="login.php">Login</a></button></center> -->
                 <center>
-           <div class="sign_in">   
+           <div>   
            <a href="login.php">Login</a>
              </div>
            </center>

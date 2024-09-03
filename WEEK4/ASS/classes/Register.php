@@ -8,9 +8,9 @@ class Register extends Dbh{
     private $username;
     private $email;
     private $phoneNo;
-    private $pwd;
-    private $confirmpwd;
-    private $errors = array();
+    protected $pwd;
+    protected $confirmpwd;
+    protected $errors = array();
     public function __construct($fullname, $state,$gender, $username, $email,$phoneNo, $pwd, $confirmpwd)
     {
         $this->fullname = $fullname;
@@ -48,12 +48,12 @@ class Register extends Dbh{
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
-    private function notValidPwd(){
+    protected function notValidPwd(){
         if(!(preg_match('/[a-zA-Z]/', $this->pwd) && preg_match('/[0-9]/', $this->pwd))){
             $this->errors[] = "Password must contain both letters and numbers";   
         }
     }
-    private function newPwd_is_more_than6(){
+    protected function newPwd_is_more_than6(){
         if(strlen($this->pwd) < 6){
             $this->errors[] = "Password must have atleast six characters";
         }
@@ -85,13 +85,13 @@ class Register extends Dbh{
                    
         }
     }
-    private function inputFieldEmpty(){
+    protected function inputFieldEmpty(){
         if(empty($this->fullname) || empty($this->state)||empty($this->username)||empty($this->gender) || empty($this->phoneNo)|| empty($this->pwd) || empty($this->email) || empty($this->confirmpwd)){
                     $this->errors[] = "All fields must be field";
                    
         }
     }
-    private function EmailNotValid(){
+    protected function EmailNotValid(){
         if(!(filter_var($this->email, FILTER_VALIDATE_EMAIL))){
                         $this->errors[] = "Enter a valid email address";
         }
@@ -101,10 +101,13 @@ class Register extends Dbh{
                                 $this->errors[] = "Invalid phone number";         
                     }
                  }
-    private function pwdNotThesame(){
+    protected function pwdNotThesame(){
         if($this->confirmpwd != $this->pwd ){
                 $this->errors[] = "Password is not the same";
         }
+    }
+    public function getErrors() {
+        return $this->errors;
     }
     public function register(){
         $this->inputFieldEmpty();

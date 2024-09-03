@@ -33,11 +33,15 @@ class Login extends Dbh{
                     $this->errors[] ="Invalid username/email/phoneNo";
                 }
     }
-    private function InputfieldEmpty(){
+    protected function InputfieldEmpty(){
         if(empty($this->username) || empty($this->pwd)){
             $this->errors[] ="All fields are required";
     }
 }
+// public function rememeberMe(){
+    
+
+// }
     public function loginUser(){
             $this->InputfieldEmpty(); 
             $this->invalidPwd();
@@ -48,6 +52,7 @@ class Login extends Dbh{
                 die();
            }
           $_SESSION['userDetails'] = $this->getLoginDetails();
+         // $this->rememeberMe(); 
            header("Location: ../dashboard.php");    
         }
     }
